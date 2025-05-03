@@ -1,10 +1,42 @@
 package III_Arrays.II_Medium;
+
+import java.util.Arrays;
+
 //https://leetcode.com/problems/maximum-subarray/description/
 public class IV_MaximumSubArraySum {
     public static void main(String[] args) {
         int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
         System.out.println(maxSubArrayBrute(arr));
         System.out.println(maxSubArrayOptimal(arr));
+        printMaxSubArray(arr);
+    }
+
+    public static void printMaxSubArray(int[] arr) {
+        int maxSoFar = arr[0];
+        int currMax = arr[0];
+        int start = 0;
+        int end = 0;
+        int s = 0;
+
+        for (int i = 1; i < arr.length; i++) {
+            if (currMax + arr[i] < arr[i]) {
+                currMax = arr[i];
+                s = i;
+            } else {
+                currMax += arr[i];
+            }
+
+            if (currMax > maxSoFar) {
+                maxSoFar = currMax;
+                start = s;
+                end = i;
+            }
+        }
+
+        // Print the subarray
+        System.out.println("Maximum subarray sum: " + maxSoFar);
+        System.out.print("Subarray: ");
+        System.out.println(Arrays.toString(Arrays.copyOfRange(arr, start, end + 1)));
     }
 
     public static int maxSubArrayOptimal(int[] arr) {
