@@ -1,7 +1,7 @@
 package III_Arrays.I_Easy;
 
 import java.util.HashMap;
-
+//https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1
 public class XII_LongestSubArrayWithGivenSumK {
     public static void main(String[] args) {
         int[] arr = {2, 3, 5};

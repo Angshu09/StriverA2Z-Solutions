@@ -1,4 +1,4 @@
-package III_Arrays.I_Easy;
+package I_Arrays.I_Easy;
 
 /*
     Given an array of integers nums, return the value of the largest element in the array
